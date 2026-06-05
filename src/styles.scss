@@ -1,0 +1,70 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+* { font-family: 'Roboto', sans-serif; box-sizing: border-box; }
+body { margin:0; padding:0; background:#f5f5f5; color:#333; font-size:14px; }
+
+.app-layout  { display:flex; min-height:100vh; }
+.app-sidebar {
+  width:260px; min-height:100vh; background:#1976d2; color:#fff;
+  flex-shrink:0; transition:width 0.3s ease;
+  &.collapsed { width:64px; }
+}
+.app-main    { flex:1; display:flex; flex-direction:column; min-width:0; }
+.app-topbar  {
+  height:64px; background:#fff; border-bottom:1px solid #e0e0e0;
+  display:flex; align-items:center; padding:0 1.5rem;
+  box-shadow:0 2px 4px rgba(0,0,0,.08); position:sticky; top:0; z-index:100;
+}
+.app-content { flex:1; padding:2rem; overflow-y:auto; }
+
+.stat-card {
+  border-radius:12px !important; border:none !important;
+  box-shadow:0 2px 8px rgba(0,0,0,.08) !important;
+  transition:transform .2s, box-shadow .2s;
+  &:hover { transform:translateY(-2px); box-shadow:0 6px 16px rgba(0,0,0,.12) !important; }
+}
+.page-header {
+  margin-bottom:1.5rem;
+  h2 { margin:0 0 .25rem 0; font-size:1.5rem; font-weight:500; color:#1976d2; }
+  p  { margin:0; color:#666; font-size:.875rem; }
+}
+
+/* Badge priorità */
+.badge-p-low    { background:#e8f5e9; color:#2e7d32; }
+.badge-p-medium { background:#fff8e1; color:#f57f17; }
+.badge-p-high   { background:#fce4ec; color:#c62828; }
+/* Badge stato job */
+.badge-j-aperta  { background:#e3f2fd; color:#1565c0; }
+.badge-j-carico  { background:#e8f5e9; color:#2e7d32; }
+.badge-j-attcli  { background:#fff8e1; color:#f57f17; }
+.badge-j-attcs   { background:#fce4ec; color:#c62828; }
+.badge-j-chiusa  { background:#f5f5f5; color:#616161; }
+.badge-active    { background:#e3f2fd; color:#1565c0; }
+.badge-inactive  { background:#f5f5f5; color:#616161; }
+
+.p-datatable .p-datatable-thead > tr > th {
+  background:#f5f5f5 !important; color:#555 !important;
+  font-weight:600 !important; font-size:.8rem !important;
+  text-transform:uppercase; letter-spacing:.5px;
+}
+.p-datatable .p-datatable-tbody > tr:hover { background:#f0f7ff !important; }
+
+.sidebar-logo {
+  height:64px; display:flex; align-items:center; padding:0 1.25rem;
+  font-size:1.1rem; font-weight:700; gap:.75rem;
+  border-bottom:1px solid rgba(255,255,255,.15);
+  i { font-size:1.4rem; }
+}
+.sidebar-menu {
+  list-style:none; padding:0; margin:.5rem 0;
+  li a {
+    display:flex; align-items:center; gap:.75rem;
+    padding:.75rem 1.25rem; color:rgba(255,255,255,.85);
+    text-decoration:none; font-size:.9rem;
+    border-radius:8px; margin:2px 8px; transition:background .15s;
+    i { font-size:1.1rem; width:1.2rem; text-align:center; }
+    &:hover, &.active { background:rgba(255,255,255,.15); color:#fff; }
+  }
+}
+@media(max-width:768px) { .app-sidebar { display:none; } .app-content { padding:1rem; } }
